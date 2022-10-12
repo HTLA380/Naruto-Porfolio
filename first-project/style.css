@@ -1,0 +1,525 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  width: 100%;
+  height: 100vh;
+  background: #000000;
+  color: #fff;
+  font-family: sans-serif;
+}
+
+#header{
+  padding-top: 80px;
+  width: 100%;
+  height: 100vh;
+  background-image: url(/anime/naruto-2.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.container{
+  margin: 10px 10%;
+}
+
+nav{
+  transition: background 0.4s;
+}
+
+.nav{
+  justify-content: space-between;
+  background: linear-gradient(to right,#cc2b5eb9,  #743a88b9);
+  z-index: 50;
+  width: 100%;
+  margin: 0 auto;
+  left: 0;
+  top: 0;
+  align-items: center;
+  display: flex;
+  position: fixed;
+  flex-wrap: wrap;
+}
+
+
+nav ul li{
+  display: inline-block;
+  list-style: none;
+  margin-right: 50px;
+  font-size: 18px;
+}
+
+nav ul li a{
+  color: white;
+  text-decoration: none;
+  position: relative;
+}
+
+nav ul li a::after{
+  content: '';
+  width: 0%;
+  height: 3px;
+  background: #ff004f;
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  transition: width 0.5s;
+}
+
+nav ul li a:hover::after{
+  width: 100%;
+}
+
+.logo{
+  width: 100px;
+}
+
+
+.flag{
+  width: 60px;
+  vertical-align: middle;
+}
+
+.text{
+  margin: 15% 40px;
+  font-size: 30px;
+  color: rgb(255, 205, 130);
+}
+
+.text h1{
+  color: white;
+  font-size: 60px;
+}
+
+.text h1 span.naruto{
+  color: #ff004f;
+}
+
+/* ----------------------------- about -------------------------------- */
+
+#about{
+  width: 100%;
+  height: 100vh;
+  padding: 80px 10%;
+}
+
+.title{
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+
+.row{
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.col-1{
+  flex-basis: 35%;
+  min-width: 200px;
+}
+
+.col-1 img{
+  width: 100%;
+}
+
+
+.col-2{
+  flex-basis: 60%;
+  min-width: 200px;
+}
+
+.col-2 p{
+  color: #ababab;
+}
+
+.tab-titles{
+  display: flex;
+  margin: 20px 0 40px;
+  font-size: 18px;
+}
+
+.tab-links{
+  margin-right: 40px;
+  color: rgb(255, 207, 136);
+  cursor: pointer;
+  position: relative;
+}
+
+.tab-links::after{
+  content: '';
+  background: #ff004f;
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  bottom: -8px;
+  left: 0;
+  transition: width 0.5s;
+}
+
+.tab-links.active-links::after{
+  width: 50%;
+}
+
+.tab-contents ul li{
+  margin-top: 10px;
+  line-height: 22px;
+  list-style: none;
+  color: #ababab;
+}
+
+.tab-contents ul li span{
+  color: #cf1d56;
+  font-size: 14px;
+}
+
+
+.tab-contents{
+  display: none;
+}
+
+.tab-contents.active-tab{
+  display: block;
+}
+
+/* --------------------- skills -------------------- */
+#skills{
+  padding: 50px 0;
+}
+
+.skill-list{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 40px;
+}
+
+.skill-list div{
+  margin-top: 30px;
+  background: #111111;
+  padding: 60px 40px;
+  border-radius: 15px;
+  font-size: 14px;
+  color: #d6d6d6;
+  font-weight: 400;
+  transition: background 0.5s, transform 0.5s;
+}
+
+.skill-list div i{
+  color: white;
+  font-size: 60px;
+  margin-bottom: 40px;
+}
+
+.skill-list div h2{
+  color: white;
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.skill-list div a{
+  text-decoration: none;
+  color: #d6d6d6;
+  margin-top: 20px;
+  display: inline-block;
+  font-size: 12px;
+}
+
+.skill-list div:hover{
+  background: #ff004f;
+  transform: translateY(-10px);
+}
+
+/* -------------------------- family -------------------------- */
+
+#family{
+  padding: 50px 0;
+}
+
+.family-list{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-gap: 40px;
+  margin-top: 50px;
+}
+
+.family{
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.family img{
+  width: 100%;
+  height: 650px;
+  background-position: center;
+  background-size: cover;
+  border-radius: 15px;
+  transition: transform 0.5s;
+}
+
+.layer{
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), #ff0051cb);
+  height: 0%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 0 40px;
+  font-size: 14px;
+  line-height: 18px;
+  overflow: hidden;
+  transition: height 0.5s;
+}
+
+.layer h3{
+  color: aquamarine;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.layer a{
+  font-size: 20px;
+  line-height: 20px;
+  color: #ff004f;
+  background: white;
+  padding: 20px;
+  border-radius: 40px;
+  margin-top: 15px;
+}
+
+.family:hover img{
+  transform: scale(1.1);
+}
+
+.family:hover .layer{
+  height: 100%;
+}
+
+
+.btn{
+  display: block;
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  border: 1px solid #ff004f;
+  padding: 14px 50px;
+  width: fit-content;
+  margin-top: 50px;
+  margin: auto;
+  border-radius: 6px;
+  transition: background 0.5s;
+  margin-top: 50px;
+}
+
+.btn:hover{
+  background: #ff004f;
+}
+
+/* -------------------------- music -------------------------------- */
+
+#music{
+  padding: 50px 0;
+  width: 100%;
+  height: 100vh;
+}
+
+#music .container{
+  padding-bottom: 10%;
+}
+
+.music-list{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  column-gap: 50px;
+  margin-top: 50px;
+  position: relative;
+}
+
+
+.music img{
+  width: 90%;
+  height: 84%;
+  object-fit: cover;
+  box-shadow: 2px 2px 25px rgba(0, 0, 0, 1);
+}
+
+.music{
+  margin-bottom: 50px;
+  position: relative;
+  height: 800px;
+  width: 500px;
+  background-image:
+  linear-gradient(to bottom, #fc466a8e, #3f5efb86);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+}
+
+.music-text{
+  font-family:  'Oswald', sans-serif;
+  position: absolute;
+  top: 27px;
+  background: linear-gradient(to right, #8a2387c2, #e94057bb, #f27121dc);
+  width: 90%;
+  text-align: center;
+}
+
+.music-text h1{
+  letter-spacing: 2px;
+  color: rgb(17, 7, 61);
+}
+
+.music-text p{
+  font-family: Arial;
+  margin-bottom: 10px;
+  font-weight: 300;
+}
+
+.music-text p span{
+  font-family: 'Oswald';
+  color: rgb(170, 253, 163);
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 3px;
+}
+
+audio{
+  margin-top: 20px;
+  width: 80%;
+}
+
+.button-78 {
+  align-items: center;
+  appearance: none;
+  background-clip: padding-box;
+  background-color: initial;
+  background-image: none;
+  border-style: none;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  flex-direction: row;
+  flex-shrink: 0;
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  justify-content: center;
+  line-height: 24px;
+  margin: 30px auto;
+  min-height: 64px;
+  outline: none;
+  overflow: visible;
+  padding: 15px 50px;
+  pointer-events: auto;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: auto;
+  word-break: keep-all;
+  z-index: 0;
+}
+
+
+.button-78:before,
+.button-78:after {
+  border-radius: 80px;
+}
+
+.button-78:before {
+  background-image: linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);
+  content: "";
+  display: block;
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -2;
+}
+
+.button-78:after {
+  background-color: initial;
+  background-image: linear-gradient(#541a0f 0, #0c0d0d 100%);
+  bottom: 4px;
+  content: "";
+  display: block;
+  left: 4px;
+  overflow: hidden;
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  transition: all 100ms ease-out;
+  z-index: -1;
+}
+
+.button-78:hover:not(:disabled):before {
+  background: linear-gradient(92.83deg, rgb(255, 116, 38) 0%, rgb(249, 58, 19) 100%);
+}
+
+.button-78:hover:not(:disabled):after {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  transition-timing-function: ease-in;
+  opacity: 0;
+}
+
+.button-78:active:not(:disabled) {
+  color: #ccc;
+}
+
+.button-78:active:not(:disabled):before {
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);
+}
+
+.button-78:active:not(:disabled):after {
+  background-image: linear-gradient(#541a0f 0, #0c0d0d 100%);
+  bottom: 4px;
+  left: 4px;
+  right: 4px;
+  top: 4px;
+}
+
+.button-78:disabled {
+  cursor: default;
+  opacity: .24;
+}
+
+.copy-right{
+  background: #111111;
+  width: 100%;
+  height:60px;
+  text-align: center;
+}
+
+.copy-right p{
+  text-transform: uppercase;
+  font-family: 'Oswald';
+  font-weight: 30;
+  font-size: 20px;
+  padding: 15px;
+}
